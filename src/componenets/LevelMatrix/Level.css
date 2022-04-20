@@ -1,33 +1,47 @@
-  body{
-    background-color: #181A25;
-  }
-
+@media only screen and (min-width: 800px) {
   #gameBoard {
-    background-color: black;
+    background-image: url('../../images/dirt.jpeg');
+    background-color: #181A25;
     display: grid;
     grid-template-columns: repeat(28, 28px);
     grid-template-rows: repeat(28, 28px);
     margin-left: auto;
     margin-right: auto;
-    margin-top: 200px;
+    margin-top: 50px;
     width: 784px;
     height: 784px;
     z-index: -2;
+    border: 1px solid rgba(14, 60, 30, 0.9);
+
   }
 
-  .wall{
+  .kong {
+    background-image: url('../../images/perfectKong.gif');
+    z-index: 100;
+  }
+
+  body {
+    box-sizing: border-box;
+    background-color: #181A25;
+    margin: 0;
+    padding: 0;
+  }
+
+
+
+  .wall {
     height: 28px;
     width: 28px;
-    background-color: blue;
+    background-image: url('../../images/wall.jpeg');
   }
 
   .pac-dots {
-    background-color: white;
-    border-radius: 50%;
-    height: 5px;
-    width: 5px;
-    align-self: center;
-    justify-self: center;
+    background-image: url('../../images/banana.gif');
+    background-repeat: no-repeat;
+    background-size: auto;
+    background-position: center;
+    z-index: 1;
+
   }
 
   .power-pellet {
@@ -35,16 +49,157 @@
     border-radius: 50%;
     height: 20px;
     width: 20px;
-        align-self: center;
+    align-self: center;
     justify-self: center;
   }
 
-  .pac-man{
-    background-color: yellow;
+
+  .container {
+    display: flex;
+    flex-direction: column;
+  }
+
+
+  #score {
+    color: white;
+    text-align: center;
+    margin-top: 50px;
+  }
+}
+
+@media only screen and (min-width: 710px) {
+  #gameBoard {
+    background-image: url('../../images/dirt.jpeg');
+    background-color: #181A25;
+    display: grid;
+    grid-template-columns: repeat(28, 25px);
+    grid-template-rows: repeat(28, 25px);
+    margin-left: auto;
+    margin-right: auto;
+    width: 700px;
+    height: 700px;
+    z-index: -2;
+    border: 1px solid rgba(14, 60, 30, 0.9);
+
+  }
+
+  .kong {
+    background-image: url('../../images/perfectKong.gif');
+    z-index: 100;
+  }
+
+  body {
+    box-sizing: border-box;
+    background-color: #181A25;
+    margin: 0;
+    padding: 0;
+  }
+
+
+
+  .wall {
+    height: 25px;
+    width: 25px;
+    background-image: url('../../images/wall.jpeg');
+  }
+
+  .pac-dots {
+    background-image: url('../../images/banana.gif');
+    background-repeat: no-repeat;
+    background-size: auto;
+    background-position: center;
+    z-index: 1;
+
+  }
+
+  .power-pellet {
+    background-color: white;
     border-radius: 50%;
-    align-self: center;
-    justify-self: center;
     height: 20px;
     width: 20px;
+    align-self: center;
+    justify-self: center;
+  }
+
+
+  .container {
+    display: flex;
+    flex-direction: column;
+  }
+
+
+  #score {
+    color: white;
+    text-align: center;
+    margin-top: 5px;
+  }
+}
+
+@media only screen and (max-width: 709px) {
+  #gameBoard {
+    background-image: url('../../images/dirt.jpeg');
+    background-color: #181A25;
+    display: grid;
+    grid-template-columns: repeat(28, 20px);
+    grid-template-rows: repeat(28, 20px);
+    margin-left: auto;
+    margin-right: auto;
+    width: 560px;
+    height: 560px;
+    z-index: -2;
+    border: 1px solid rgba(14, 60, 30, 0.9);
+
+  }
+
+  .kong {
+    background-image: url('../../images/perfectKong.gif');
+    background-repeat: no-repeat;
+    background-size: auto;
+    background-position: center;
     z-index: 100;
+  }
+
+  body {
+    box-sizing: border-box;
+    background-color: #181A25;
+    margin: 0;
+    padding: 0;
+  }
+
+  .wall {
+    height: 20px;
+    width: 20px;
+    background-image: url('../../images/wall.jpeg');
+  }
+
+  .pac-dots {
+    background-image: url('../../images/banana.gif');
+    background-repeat: no-repeat;
+    background-size: auto;
+    background-position: center;
+    z-index: 1;
+
+  }
+
+  .power-pellet {
+    background-color: white;
+    border-radius: 50%;
+    height: 15px;
+    width: 15px;
+    align-self: center;
+    justify-self: center;
+  }
+
+
+  .container {
+    display: flex;
+    flex-direction: column;
+  }
+
+
+  #score {
+    color: white;
+    text-align: center;
+    margin-top: 5px;
+  }
 }

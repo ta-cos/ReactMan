@@ -1,8 +1,15 @@
-.pacman-constrols{
-    z-index: 10;
-    height: 100%;
-    width: 100%;
-    position: absolute;
-    top: 0;
-    left: 0;
-}
+#startGame{
+    padding: 10px;
+    font-size: 16px;
+    width: 400px;
+    margin-top: 50px;
+    border-radius: 20px;
+    border: none;
+    outline: none;
+    color: #fff;
+    background-color: black;
+  }
+
+  #startGame:hover{
+    background-color: blue;
+  }

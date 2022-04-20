@@ -1,95 +1,47 @@
-import React, { useState, useEffect } from 'react'
-import useForceUpdate from 'use-force-update';
+import React, { useState, useLayoutEffect } from 'react'
 import './Pacman.css'
 
 function Pacman({ props }) {
 
-    const { matrix, matrixChanges, setChanges } = props
-    const [row, setRow] = useState(0);
-    const [col, setCol] = useState(0)
-    const forceUpdate = useForceUpdate()
+    const { row, setRow, col, setCol, matrix, isActive, setActive } = props
+    const [isGame, setIsGame] = useState(false);
 
 
 
-    useEffect(() => {
-        console.log(matrixChanges)
-        console.log(matrix)
-        console.log(col)
-        console.log(row)
-
-    }, [row, col])
-
-
-    //left arrow key code 37
-    //up arrow key code 38
-    //right arrow key code 39
-    //down arrow key code 40
-
-    const handleKeyDown = (e) => {
+    const handleKeyUp = (e) => {
         switch (e.keyCode) {
             case 37:
-                console.log()
-                goLeft()
+                setCol(col - 1)
+                setActive(row * (col - 1))
                 break
             case 38:
-                goUp()
+                setRow(row - 1)
+                console.log("up")
                 break
             case 39:
-                goRight()
+                setCol(col + 1)
+                console.log('right')
                 break
             case 40:
-                goDown()
+                setRow(row + 1)
+                console.log('down')
                 break
         }
     }
 
-    function goLeft() {
-        matrix[row][col] = 4
-        setCol(col - 1)
-        matrix[row][col] = 5
-        setChanges(matrixChanges + 1)
-        forceUpdate();
-
-
-    }
-
-    function goRight() {
-        matrix[row][col] = 4
-        setCol(col + 1)
-        matrix[row][col] = 5
-        setChanges(matrixChanges + 1)
-        forceUpdate();
-
-
-    }
-
-    function goUp() {
-        matrix[row][col] = 4
-        setRow(row + 1)
-        matrix[row][col] = 5
-        setChanges(matrixChanges + 1)
-        forceUpdate();
-
-
-    }
-
-    function goDown() {
-        matrix[row][col] = 4
-        setRow(row - 1)
-        matrix[row][col] = 5
-        setChanges(matrixChanges + 1)
-        forceUpdate();
-
-
+    function startGame(e) {
+        if (isGame) return
+        setIsGame(true)
+        setActive(row * col)
     }
 
 
     return (
         <div
-            className='pacman-constrols'
-            onKeyDown={handleKeyDown}
+            className='pacman-controls'
             tabIndex='0'
         >
+            <button id='startGame' onClick={startGame} onKeyUp={handleKeyUp}>Start Game</button>
         </div>
     )
 }
